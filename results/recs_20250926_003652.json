@@ -1,0 +1,51 @@
+{
+  "timestamp": "20250926_003652",
+  "user_input": "python, sql, ml",
+  "recommendations": [
+    {
+      "career": "AI Engineer",
+      "score_pct": 33.3,
+      "match_count": 1,
+      "matched_skills": [
+        "python"
+      ],
+      "career_skill_count": 3
+    },
+    {
+      "career": "Data Analyst",
+      "score_pct": 33.3,
+      "match_count": 1,
+      "matched_skills": [
+        "sql"
+      ],
+      "career_skill_count": 3
+    },
+    {
+      "career": "NLP Engineer",
+      "score_pct": 33.3,
+      "match_count": 1,
+      "matched_skills": [
+        "python"
+      ],
+      "career_skill_count": 3
+    },
+    {
+      "career": "Data Scientist",
+      "score_pct": 28.3,
+      "match_count": 1,
+      "matched_skills": [
+        "python"
+      ],
+      "career_skill_count": 4
+    },
+    {
+      "career": "Data Engineer",
+      "score_pct": 28.3,
+      "match_count": 1,
+      "matched_skills": [
+        "python"
+      ],
+      "career_skill_count": 4
+    }
+  ]
+}
