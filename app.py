@@ -8,81 +8,7 @@ from io import StringIO, BytesIO
 
 st.set_page_config(page_title="AI Career Path Recommender", page_icon="🎓", layout="wide")
 
-
-
-# --- Simple login page ---
-
-def login_page():
-    st.markdown("""
-        <style>
-        .login-card {
-            background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(60,60,120,0.12);
-            padding: 2.5rem 2rem 2rem 2rem;
-            max-width: 400px;
-            margin: 60px auto 0 auto;
-        }
-        .login-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #3b3b5c;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        .login-sub {
-            font-size: 1.1rem;
-            color: #5c5c7a;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .login-icon {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div style="text-align:center;margin-bottom:1.5rem;">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" width="80" alt="Books Icon" style="margin-bottom:0.5rem;"/>
-        <h1 style="font-size:2.1rem;font-weight:700;color:#3b3b5c;margin:0;">Career Path Recommender</h1>
-        <div style="font-size:1.1rem;color:#5c5c7a;margin-bottom:0.5rem;">AI-powered career guidance for tech enthusiasts</div>
-    </div>
-    """, unsafe_allow_html=True)
-    st.markdown('<div class="login-card">', unsafe_allow_html=True)
-    st.markdown('<div class="login-icon"><img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" width="60" alt="Login Icon" style="border-radius:50%;box-shadow:0 2px 8px #ccc;"/></div>', unsafe_allow_html=True)
-    st.markdown('<div class="login-title">Welcome Back!</div>', unsafe_allow_html=True)
-    st.markdown('<div class="login-sub">Sign in to unlock your personalized career recommendations.<br>Modern, secure, and AI-powered.</div>', unsafe_allow_html=True)
-
-    with st.form("login_form"):
-        username = st.text_input("Username", placeholder="Enter your username", key="login_user")
-        password = st.text_input("Password", type="password", placeholder="Enter your password", key="login_pass")
-        login_btn = st.form_submit_button("Login", help="Sign in to continue")
-    if login_btn:
-        # Hardcoded credentials (change as needed)
-        if username == "user" and password == "pass":
-            st.session_state["logged_in"] = True
-            st.success("Login successful! Redirecting...")
-            st.rerun()
-        else:
-            st.error("Invalid username or password.")
-            st.markdown('<div style="text-align:center;color:#e53e3e;font-size:1.1rem;">Please try again.</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
-# --- Logout button (visible after login) ---
-if "logged_in" in st.session_state and st.session_state["logged_in"]:
-    with st.sidebar:
-        if st.button("Logout", help="Sign out and return to login page"):
-            st.session_state["logged_in"] = False
-            st.session_state["skills_input"] = ""
-            st.rerun()
-
-if "logged_in" not in st.session_state or not st.session_state["logged_in"]:
-    login_page()
-    st.stop()
+# No login required - direct access for portfolio demo
 
 # --- Import ML recommender ---
 USE_NEW_API = False
@@ -94,7 +20,6 @@ except Exception as e:
     raise
 
 # --- Page config + header ---
-st.set_page_config(page_title="AI Career Path Recommender", page_icon="🎓", layout="wide")
 st.markdown("<style> .big-font { font-size:22px !important; } </style>", unsafe_allow_html=True)
 
 # Header
